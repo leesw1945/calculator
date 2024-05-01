@@ -7,8 +7,8 @@ public class App {
 
     public static void main(String[] args) {
 
-        int[] resultArr = new int[10];
-        int index = 0;
+//        int[] resultArr = new int[10];
+//        int index = 0;
         Scanner sc = new Scanner(System.in);
 
         int result = 0;
@@ -40,8 +40,8 @@ public class App {
             }
             System.out.println("결과: " + result);
 
-            resultArr[index] = result;
-            index++;
+//            resultArr[index] = result;
+//            index++;
 
             String lineFeed = sc.nextLine();
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료)");
@@ -50,6 +50,6 @@ public class App {
                 break;
             }
         }
-        System.out.println(Arrays.toString(resultArr));
+//        System.out.println(Arrays.toString(resultArr));
     }
 }
