@@ -15,6 +15,23 @@ public class App {
         System.out.print("사칙연산 기호를 입력하세요: ");
         char operator = sc.next().charAt(0);
 
-        System.out.println("operator = " + operator);
+        int result = 0;
+        switch (operator){
+            case '+':
+                result = num1 + num2;
+                break;
+            case '-':
+                result = num1 - num2;
+                break;
+            case '/':
+                result = num1 / num2;
+                break;
+            case '*':
+                result = num1 * num2;
+                break;
+            default:
+                System.out.println("잘 못 입력하였습니다.");
+        }
+        System.out.println("결과: " + result);
     }
 }
