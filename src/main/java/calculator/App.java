@@ -27,22 +27,19 @@ public class App {
             catch (BadException e){
                 System.out.println(e.getMessage());
             }
-            finally {
-                System.out.println("예외처리");
-            }
 
-            System.out.println("결과: " + calculator.result);
+            System.out.println("결과: " + calculator.getResultArrList());
             String lineFeed = sc.nextLine();
 
             System.out.print("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
             String remove = sc.nextLine();
             if (remove.equals("remove")){
-                calculator.resultArrList.remove(0);
+                calculator.getResultArrList().remove(0);
             }
             System.out.print("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
             String inquiry = sc.nextLine();
             if (inquiry.equals("inquiry")){
-                for (int select : calculator.resultArrList){
+                for (int select : calculator.getResultArrList()){
                     System.out.println(select);
                 }
             }
@@ -52,6 +49,6 @@ public class App {
                 break;
             }
         }
-        System.out.println(calculator.resultArrList.toString());
+        System.out.println(calculator.getResultArrList().toString());
     }
 }

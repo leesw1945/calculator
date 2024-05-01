@@ -5,19 +5,27 @@ import java.util.Scanner;
 
 public class Calculator {
     /* 연산 결과를 저장하는 컬렉션 타입 필드 선언 및 생성 */
-    ArrayList<Integer> resultArrList = new ArrayList<>();
+    private ArrayList<Integer> resultArrList = new ArrayList<>();
 
-    int result = 0;
+    public ArrayList<Integer> getResultArrList() {
+        return resultArrList;
+    }
 
-    public int calculate(int num1, int num2, char check) throws BadException {
+    public void setResultArrList(ArrayList<Integer> resultArrList) {
+        this.resultArrList = resultArrList;
+    }
+
+    public int calculate(int num1, int num2, char operator) throws BadException {
         /* 위 요구사항에 맞게 구현 */
         /* return 연산 결과 */
 
-        if (check != '+' && check != '-' && check != '*' && check != '/')
+        int result = 0;
+
+        if (operator != '+' && operator != '-' && operator != '*' && operator != '/')
         {
             throw new BadException();
         }
-        switch (check){
+        switch (operator){
                 case '+':
                     result = num1 + num2;
                     break;
