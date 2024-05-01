@@ -1,5 +1,6 @@
 package calculator;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -7,9 +8,13 @@ public class App {
 
     public static void main(String[] args) {
 
-        int[] resultArr = new int[10];
-        int index = 0;
+        // 배열 1-5, 1-6
+//        int[] resultArr = new int[10];
+//        int index = 0;
 //        int[] shiftArr = new int[resultArr.length];
+
+        ArrayList<Integer> resultArrList = new ArrayList<>();
+
         Scanner sc = new Scanner(System.in);
 
         int result = 0;
@@ -41,9 +46,11 @@ public class App {
             }
             System.out.println("결과: " + result);
 
-            resultArr[index] = result;
-            index++;
+            // 배열 1-5
+//            resultArr[index] = result;
+//            index++;
 
+            // 한칸씩 앞으로 땡기기 1-6
 //            if (index == 10){
 //                resultArr[0] = 0;
 //                for (int i = 0; i < resultArr.length; i++){
@@ -55,14 +62,24 @@ public class App {
 //                }
 //            }
 
+            // ArrayList 1-7
+            resultArrList.add(result);
+
             String lineFeed = sc.nextLine();
+            System.out.print("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
+            String remove = sc.nextLine();
+            if (remove.equals("remove")){
+                resultArrList.remove(0);
+            }
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료)");
             String exit = sc.nextLine();
             if (exit.equals("exit")){
                 break;
             }
         }
-        System.out.println(Arrays.toString(resultArr));
-        //System.out.println(Arrays.toString(shiftArr));
+        // 1-5, 1-6
+//        System.out.println(Arrays.toString(resultArr));
+//        System.out.println(Arrays.toString(shiftArr));
+        System.out.println(resultArrList.toString());
     }
 }
