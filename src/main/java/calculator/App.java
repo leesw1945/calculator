@@ -8,10 +8,6 @@ public class App {
 
     public static void main(String[] args) {
 
-        // 배열 1-5, 1-6
-//        int[] resultArr = new int[10];
-//        int index = 0;
-//        int[] shiftArr = new int[resultArr.length];
 
         ArrayList<Integer> resultArrList = new ArrayList<>();
 
@@ -46,22 +42,6 @@ public class App {
             }
             System.out.println("결과: " + result);
 
-            // 배열 1-5
-//            resultArr[index] = result;
-//            index++;
-
-            // 한칸씩 앞으로 땡기기 1-6
-//            if (index == 10){
-//                resultArr[0] = 0;
-//                for (int i = 0; i < resultArr.length; i++){
-//                    resultArr[i] = resultArr[i+1];
-//                }
-//
-//                for (int i = 1; i <= resultArr.length; i++){
-//                    shiftArr[i - 1] = resultArr[i];
-//                }
-//            }
-
             // ArrayList 1-7
             resultArrList.add(result);
 
@@ -71,15 +51,19 @@ public class App {
             if (remove.equals("remove")){
                 resultArrList.remove(0);
             }
+            System.out.print("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
+            String inquiry = sc.nextLine();
+            if (inquiry.equals("inquiry")){
+                for (int select : resultArrList){
+                    System.out.println(select);
+                }
+            }
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료)");
             String exit = sc.nextLine();
             if (exit.equals("exit")){
                 break;
             }
         }
-        // 1-5, 1-6
-//        System.out.println(Arrays.toString(resultArr));
-//        System.out.println(Arrays.toString(shiftArr));
         System.out.println(resultArrList.toString());
     }
 }
