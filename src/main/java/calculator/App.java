@@ -62,7 +62,7 @@ public class App {
                 break;
             }
         }
-        //System.out.println(Arrays.toString(resultArr));
-        System.out.println(Arrays.toString(shiftArr));
+        System.out.println(Arrays.toString(resultArr));
+        //System.out.println(Arrays.toString(shiftArr));
     }
 }
