@@ -9,6 +9,7 @@ public class App {
 
         int[] resultArr = new int[10];
         int index = 0;
+//        int[] shiftArr = new int[resultArr.length];
         Scanner sc = new Scanner(System.in);
 
         int result = 0;
@@ -43,6 +44,17 @@ public class App {
             resultArr[index] = result;
             index++;
 
+//            if (index == 10){
+//                resultArr[0] = 0;
+//                for (int i = 0; i < resultArr.length; i++){
+//                    resultArr[i] = resultArr[i+1];
+//                }
+//
+//                for (int i = 1; i <= resultArr.length; i++){
+//                    shiftArr[i - 1] = resultArr[i];
+//                }
+//            }
+
             String lineFeed = sc.nextLine();
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료)");
             String exit = sc.nextLine();
@@ -50,6 +62,7 @@ public class App {
                 break;
             }
         }
-        System.out.println(Arrays.toString(resultArr));
+        //System.out.println(Arrays.toString(resultArr));
+        System.out.println(Arrays.toString(shiftArr));
     }
 }
