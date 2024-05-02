@@ -1,6 +1,7 @@
 package calculator;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class Calculator {
@@ -52,5 +53,11 @@ public class Calculator {
     // 2-4
     public void removeResult(int index){
         this.resultArrList.remove(index);
+    }
+
+    public void inquiryResults(){
+        for (Integer i : resultArrList) {
+            System.out.println("연산결과 = "+resultArrList);
+        }
     }
 }

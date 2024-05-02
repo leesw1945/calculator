@@ -39,9 +39,7 @@ public class App {
             System.out.print("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
             String inquiry = sc.nextLine();
             if (inquiry.equals("inquiry")){
-                for (int select : calculator.getResultArrList()){
-                    System.out.println(select);
-                }
+                calculator.inquiryResults();
             }
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료)");
             String exit = sc.nextLine();
