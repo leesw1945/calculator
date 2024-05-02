@@ -4,8 +4,18 @@ import java.util.ArrayList;
 
 public class ArithmeticCalculator extends Calculator {
 
-    public ArithmeticCalculator(ArrayList<Double> resultArrList) {
+    private final AddOperator addOperator;
+    private final SubtractOperator subtractOperator;
+    private final MultiplyOperator multiplyOperator;
+    private final DivideOperator divideOperator;
+
+    public ArithmeticCalculator(ArrayList<Double> resultArrList, AddOperator addOperator, SubtractOperator subtractOperator,
+                                MultiplyOperator multiplyOperator, DivideOperator divideOperator) {
         super(resultArrList);
+        this.addOperator = addOperator;
+        this.subtractOperator = subtractOperator;
+        this.multiplyOperator = multiplyOperator;
+        this.divideOperator = divideOperator;
     }
 
 
@@ -20,19 +30,19 @@ public class ArithmeticCalculator extends Calculator {
         }
         switch (operator) {
             case '+':
-                result = num1 + num2;
+                result = addOperator.operate(num1, num2);
                 break;
             case '-':
-                result = num1 - num2;
+                result = subtractOperator.operate(num1, num2);
                 break;
             case '/':
                 if (num2 == 0) {
                     throw new BadException();
                 }
-                result = num1 / num2;
+                result = divideOperator.operate(num1, num2);
                 break;
             case '*':
-                result = num1 * num2;
+                result = multiplyOperator.operate(num1, num2);
                 break;
             default:
                 System.out.println("잘 못 입력하였습니다.");
