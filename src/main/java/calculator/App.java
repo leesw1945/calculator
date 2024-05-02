@@ -8,7 +8,7 @@ public class App {
 
     public static void main(String[] args)  {
 
-        Calculator calculator = new Calculator();
+        Calculator calculator = new Calculator(new ArrayList<>());
 
         Scanner sc = new Scanner(System.in);
 
