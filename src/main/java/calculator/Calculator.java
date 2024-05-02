@@ -2,6 +2,7 @@ package calculator;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Scanner;
 
 public class Calculator {
@@ -9,8 +10,12 @@ public class Calculator {
 
     private ArrayList<Integer> resultArrList;
 
-    public Calculator(ArrayList<Integer> resultArrList){
+    private ArrayList<Double> circleArrList;
+    private static final double pi = 3.14;
+
+    public Calculator(ArrayList<Integer> resultArrList, ArrayList<Double> circleArrList){
         this.resultArrList = resultArrList;
+        this.circleArrList = circleArrList;
     }
 
     public int calculate(int num1, int num2, char operator) throws BadException {
@@ -47,12 +52,24 @@ public class Calculator {
 
     }
 
+    public double circle(double radius){
+        return pi * radius * radius;
+    }
+
     public ArrayList<Integer> getResultArrList() {
         return resultArrList;
     }
 
     public void setResultArrList(ArrayList<Integer> resultArrList) {
         this.resultArrList = resultArrList;
+    }
+
+    public ArrayList<Double> getCircleArrList() {
+        return circleArrList;
+    }
+
+    public void setCircleArrList(ArrayList<Double> circleArrList) {
+        this.circleArrList = circleArrList;
     }
 
     // 2-4
@@ -63,6 +80,12 @@ public class Calculator {
     public void inquiryResults(){
         for (Integer i : resultArrList) {
             System.out.println("연산결과 = "+resultArrList);
+        }
+    }
+
+    public void inquiryCircleResults(){
+        for (Double v : circleArrList) {
+            System.out.println("연산결과 = " + circleArrList);
         }
     }
 }
