@@ -49,6 +49,7 @@ public class Calculator {
         this.resultArrList = resultArrList;
     }
 
+    // 2-4
     public void removeResult(int index){
         this.resultArrList.remove(index);
     }
